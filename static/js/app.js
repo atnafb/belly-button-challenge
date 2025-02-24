@@ -1,4 +1,9 @@
 // Build the metadata panel
+d3.json("samples.json").then(data => {
+  console.log(data); // This will log the actual data
+}).catch(error => {
+  console.error("Error loading the JSON file:", error);
+});
 function buildMetadata(sample) {
   d3.json("https://static.bc-edx.com/data/dl-1-2/m14/lms/starter/samples.json").then((data) => {
 
