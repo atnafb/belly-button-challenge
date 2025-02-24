@@ -79,7 +79,16 @@ function buildCharts(sample) {
       y: otu_ids.slice(0, 10).map(id => `OTU ${id}`).reverse(),
       text: otu_labels.slice(0, 10).reverse(),
       type: 'bar', 
-      orientation: 'h'
+      orientation: 'h', 
+      marker: { 
+        color: sample_values.slice(0, 10).reverse(),  // Color based on values
+        colorscale: 'Blues',  // Apply a colorscale
+        line: {
+          color: 'black', 
+          width: 1.5 // Add black outline for con
+        }
+
+      }
 
     };
 
@@ -87,6 +96,7 @@ function buildCharts(sample) {
 
     let barLayout = {
       title: 'Top 10 Bacteria Cultures Found',
+      font: { size:12, color: 'darkblue' }
       };
 
     // Render the Bar Chart
