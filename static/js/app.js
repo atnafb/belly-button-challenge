@@ -63,9 +63,9 @@ function buildCharts(sample) {
 
     let bubbleLayout = {
       title: 'Bacteria Culture Per Sample',
-      /*xaxis: { title: 'OTU ID' },
+      xaxis: { title: 'OTU ID' },
       yaxis: { title: 'Number of Bacteria' },
-      showlegend: false,*/
+      showlegend: false,
       height: 600,
       width: 1200
     };
@@ -81,14 +81,16 @@ function buildCharts(sample) {
       type: 'bar', 
       orientation: 'h', 
       marker: { 
-        color: sample_values.slice(0, 10).reverse(),  // Color based on values
-        colorscale: 'Blues',  // Apply a colorscale
+        color: sample_values.slice(0, 10).reverse(),  
+        colorscale: 'Blues',  
         line: {
           color: 'black', 
-          width: 1.5 // Add black outline for con
+          width: 1.5 
         }
 
-      }
+      },
+      hoverinfo: "x+y+text",
+      textposition: "none"
 
     };
 
