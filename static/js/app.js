@@ -78,22 +78,20 @@ function buildCharts(sample) {
       x: sample_values.slice(0, 10).reverse(),
       y: otu_ids.slice(0, 10).map(id => `OTU ${id}`).reverse(),
       text: otu_labels.slice(0, 10).reverse(),
-      type: 'bar'
+      type: 'bar', 
+      orientation: 'h'
+
     };
 
     let barData = [barTrace];
 
     let barLayout = {
       title: 'Top 10 Bacteria Cultures Found',
-      xaxis: { title: 'Number of Bacteria' },
-      yaxis: { title: 'OTU ID' },
-    };
+      };
 
     // Render the Bar Chart
     Plotly.newPlot('bar', barData, barLayout);
-  }).catch((error) => {
-    console.error("Error fetching data:", error);
-  });
+  })
 }
 
 // Function to run on page load
