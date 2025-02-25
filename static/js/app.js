@@ -67,7 +67,8 @@ function buildCharts(sample) {
       yaxis: { title: 'Number of Bacteria' },
       showlegend: false,
       height: 600,
-      width: 1200
+      
+      responsive: true,
     };
 
     // Render the Bubble Chart
